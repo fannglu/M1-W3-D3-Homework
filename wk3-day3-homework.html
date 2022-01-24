@@ -68,6 +68,55 @@
     squareNumber(num);
   });
 
+  function divNumber(num) {
+    var halfNumber = num / 2;
+    document.getElementById("solution").innerHTML = 'The result of half of the number ' + num + ' is ' + halfNumber;
+  }
+  
+  var halfButton = document.getElementById("half-button");
+  halfButton.addEventListener("click", function() {
+    var num = document.getElementById("half-input").value;
+    divNumber(num)
+  });
+
+  function fractionalNumber(num1, num2) {
+    var result = (num1/num2)*100;
+    console.log(result)
+    document.getElementById("solution").innerHTML = 'The percentage of ' + num1 + ' over ' + num2 + ' is ' + result.toPrecision(2) + '%';
+   }
+
+   var percentButton = document.getElementById("percent-button");
+   percentButton.addEventListener("click", function() {
+     var num1 = document.getElementById("percent1-input").value;
+     var num2 =document.getElementById("percent2-input").value;
+     fractionalNumber(num1, num2)
+   })
+
+   function intergerNumber(num) {
+     var result = Math.round(num)
+     document.getElementById("solution").innerHTML = ' The nearest whole number of ' + num + ' is ' + result;
+   }
+
+   var intergerNum = document.getElementById("int-button");
+   intergerNum.addEventListener("click", function(){
+     var result = document.getElementById("int-input").value
+     intergerNumber(result)
+    })
+
+    function radiusNumber(num) {
+      var result = Math.PI * (num **2 )
+      document.getElementById("solution").innerHTML = ' The area of circle with radius ' + num + ' is ' + result;
+    }
+
+    var radiusNum = document.getElementById("area-button");
+    radiusNum.addEventListener("click", function(){
+    var result = document.getElementById("area-input").value
+    radiusNumber(result)
+    })
+   
+
+
+
   /* Preview this page on the browser and test the first calculation */
 
   /* Now it's your turn to do the rest as seen on the preview */
